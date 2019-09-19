@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+	
+    <h:head>
+        <title>Transactions</title>
+    </h:head>
+    <h:body>
+    	<h2>Add New Transaction</h2>
+    	<h:form>
+    		<h:panelGrid columns="2" >
+    		<h:outputLabel value="#{textBundle['cust.name']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.custName}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['src.pass']} "/>
+    	   <h:inputText value="#{transactionsController.transactionDto.sourcePassport}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['dest.pass']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.destinationPassport}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['dest.bank']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.destinationBank}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['dest.country']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.destinationCountry}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['acc.numb']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.accountNumber}"></h:inputText>
+    	   <h:outputLabel value="#{textBundle['amnt']}"/>
+    	   <h:inputText value="#{transactionsController.transactionDto.amount}" type="number"></h:inputText>
+    	   </h:panelGrid>
+    	   <h:commandButton value="submit" action="#{transactionsController.saveNewTransaction(transactionsController.transactionDto)}">
+    	   </h:commandButton>
+    	   </h:form>
+    </h:body>
+</html>
